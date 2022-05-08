@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-danger">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                {{!-- <li class="nav-item">
+                    <a class="nav-link text-white" href="/cargar_producto">Cargar Producto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="/ver_productos">Ver Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white disabled" href="/eliminar_producto">Eliminar Producto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white  disabled" href="/modificar_producto">Modificar Producto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="/chat">Chat</a>
+                </li> --}}
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="/registrar">Registrarse</a>
+                </li>
+                <li class="nav-item">
+                    {{#if log}}
+                        <a class="nav-link text-white" href="/logout">Desconectarse</a>
+                        {{else}}
+                        <a class="nav-link text-white" href="/login">Loguearse</a>
+                        {{/if}}
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<h1>Bienvenido {{user}}</h1>

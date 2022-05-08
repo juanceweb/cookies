@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-danger">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                {{!-- <li class="nav-item">
+                    <a class="nav-link text-white" href="/cargar_producto">Cargar Producto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="/ver_productos">Ver Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white disabled" href="/eliminar_producto">Eliminar Producto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white  disabled" href="/modificar_producto">Modificar Producto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="/chat">Chat</a>
+                </li> --}}
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="/registrar">Registrarse</a>
+                </li>
+                <li class="nav-item">
+                    {{#if log}}
+                        <a class="nav-link text-white" href="/logout">Desconectarse</a>
+                        {{else}}
+                        <a class="nav-link text-white" href="/login">Loguearse</a>
+                        {{/if}}
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>   
+    
+<form class="p-5 m-5 bg-secondary" action="/registrar" method="POST">
+    <div class="mb-3">
+        <label for="nombres" class="form-label">Nombre</label>
+        <input class="form-control" id="nombres" name="nombres" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text text-white">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3">
+        <label for="apellidos" class="form-label">Apellido</label>
+        <input class="form-control" id="apellidos" name="apellidos">
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text text-white">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3">
+        <label for="usuario" class="form-label">Usuario</label>
+        <input class="form-control" id="usuario" name="usuario">
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" name="password">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
