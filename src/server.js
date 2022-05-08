@@ -61,7 +61,7 @@ app.use(session({
     secret: process.env.SECRET,
     resave: true,
     saveUnility: true,
-    // cookie: {maxAge:10000}
+    cookie: {maxAge:100000},
     rolling:true
 }))
 
@@ -100,7 +100,7 @@ app.post("/registrar", (req, res) =>{
 })
 
 app.get("/login", (req, res) => {
-    res.status(200).render("login", {})
+    res.status(200).render("login", {log: req.session.login})
 })
 
 
@@ -112,7 +112,7 @@ app.post("/login", async (req, res) =>{
         
         for (const user of response) { 
             if (body.email === user.email && Number(body.password) === user.password) {
-                console.log('CONECTACTOOOO');
+                console.log('Conectado');
                 req.session.login = true
                 usuario = user.usuario                
             }
@@ -144,7 +144,8 @@ app.post("/login", async (req, res) =>{
 app.get("/logout", (req, res, next) => {
     req.session.destroy((error) => {
         if (!error) {
-            res.status(200).send("Salio de la aplicacion")
+            console.log('Salio de la aplicacion');
+            res.status(200).render("login", {})
         } else {
             res.json(error)
         }
